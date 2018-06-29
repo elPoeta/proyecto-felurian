@@ -12,9 +12,10 @@ body{
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px auto 40px;
+    grid-template-rows: 50px 40px auto 40px;
     grid-template-areas: 
         "m h h h h h h h h h h h"
+        "l l l l l l l l l l l l"
         "c c c c c c c c c c c c"
         "f f f f f f f f f f f f";
 }
@@ -23,15 +24,50 @@ body{
     grid-area: h;
     display: flex;
     padding: .5rem;
-    background: seagreen;
+    background: #933157;
 }
+    
+    .header h1 a {
+        text-transform: uppercase;
+        color: #fff;
+    }
     .header .login {
         margin-left: auto;
     }
-    .header .search {
-        margin: 0 auto;
+    .header .login .fa-user{
+        color: #fff;
+        font-size: 1.5rem;
+        padding: .3rem;
     }
 
+.carrito {
+    grid-area: l;
+    display: flex;
+    padding: .5rem;
+    background: #48001E;
+}
+    .carrito .search{
+        margin-right: auto;
+    }
+    .carrito .fa-search{
+        color: #fff;
+        padding: .3rem;
+    }
+    .carrito .search #buscar{
+        border: none;
+        background: #48001E;
+        border-bottom: 1px solid #fff;
+        color: #DC93AF;
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+    .carrito .cart{
+        margin-left: auto;
+    }
+    .carrito .cart .fa-shopping-cart{
+        color: #fff;
+        padding: .3rem;
+    }
 .nav {
     grid-area: m;
     justify-items: center;
@@ -39,7 +75,7 @@ body{
 }
   
     .nav #nav-icon{
-        font-size: 33px;
+        font-size: 40px;
         line-height: 40px;
         padding: .7em;
         color: white;
@@ -140,6 +176,10 @@ body{
             "h h h h h h h h h h h h"
             "m m c c c c c c c c c c"
             "f f f f f f f f f f f f";
+    }
+
+    .carrito{
+        display: none;
     }
 }
 
