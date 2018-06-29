@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    grid-template-areas: 
+        "m h h h h h h h h h h h"
+        "c c c c c c c c c c c c"
+        "f f f f f f f f f f f f";
+}
+
+.header {
+    grid-area: h;
+    display: flex;
+    padding: .5rem;
+    background: seagreen;
+}
+    .header .login {
+        margin-left: auto;
+    }
+    .header .search {
+        margin: 0 auto;
+    }
+
+.nav {
+    grid-area: m;
+    justify-items: center;
+    background: #933157;
+}
+  
+    .nav #nav-icon{
+        font-size: 33px;
+        line-height: 40px;
+        padding: .7em;
+        color: white;
+        text-align: center;
+    }
+
+    .nav #nav-icon:hover{
+        color: #DC93AF;
+        cursor: pointer;
+    }
+    .nav-panel {
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:1;
+        top:0px;
+        left:0px;
+        background-color:#DC93AF;
+        opacity:.9;
+        overflow-x:hidden;
+        padding-top:60px;
+        transition:0.5s;
+      }
+      
+      .nav-panel  a{
+        padding:10px 10px 10px 30px;
+        font-size:1rem;
+        font-weight: bold;
+        color:#fff;
+        display:block;
+        transition:0.3s;
+      }
+      
+      .nav-panel a:hover{
+        color:#48001E;
+      }
+
+      .hide-menu{
+        display: none;
+    }
+
+    .hide-menu a{
+        margin-left: 1.5rem;
+        color:#48001E;
+    }
+
+    .hide-menu a:hover{
+      color:#fff;
+  }
+    .nav-panel ul li:hover .hide-menu{
+          display: block;
+        
+      }
+      
+      .nav-panel .btn-cerrar{
+        position:absolute;
+        top:0;
+        right:22px;
+        font-size:36px;
+        margin-left:50px;
+      }
+      
+      .nav-panel ul li a::before {
+        content: '';
+        display: block;
+        height: 2px;
+        background-color: #fff;
+        width: 0%;
+        transition: all ease-in-out 250ms;
+      }
+      
+      .nav-panel ul li a:hover::before {
+        width: 75%;
+      }
+      
+      
+.content {
+    grid-area: c;
+    background: steelblue;
+}
+
+.footer {
+    grid-area: f;
+    background: yellow;
+}
+
+
+
+
+@media screen and (min-width : 738px){
+    .container {
+        height: 100vh;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 40px auto 40px;
+        grid-template-areas: 
+            "h h h h h h h h h h h h"
+            "m m c c c c c c c c c c"
+            "f f f f f f f f f f f f";
+    }
+}
+
