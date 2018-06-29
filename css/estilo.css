@@ -25,6 +25,7 @@ body{
     display: flex;
     padding: .5rem;
     background: #933157;
+   
 }
     
     .header h1 a {
@@ -46,6 +47,8 @@ body{
     display: flex;
     padding: .5rem;
     background: #48001E;
+   
+   
 }
     .carrito .search{
         margin-right: auto;
@@ -73,6 +76,7 @@ body{
     grid-area: m;
     justify-items: center;
     background: #933157;
+   
 }
   
     .nav #nav-icon{
@@ -126,7 +130,7 @@ body{
 
     .hide-menu a:hover{
       color:#fff;
-  }
+     }
     .nav-panel ul li:hover .hide-menu{
           display: block;
         
@@ -158,15 +162,51 @@ body{
     grid-area: c;
     background: #DDDDDE;;
 }
-.content .banners {
-   max-width: 760px;
-   margin: auto;
-}
+    .content .banners {
+      max-width: 760px;
+      margin: auto;
+    }
 
- .content .banners #slider{
-        width: 100%;
+    .content .banners #slider{
+        box-sizing: border-box;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        padding: .5em;
+    }
+    .content .content-grilla{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        
+    }
+    .fondo-grilla{
+        position: relative;   
+        display: inline-block;
+    }
 
-}
+    .content .content-grilla .fondo-grilla img{
+        box-sizing: border-box;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        padding: .5em;
+        
+    }
+  
+ 
+    .texto-grilla h2{
+        font-size: 3rem;
+        color: #DDDDDE;
+        border: 3px solid #DDDDDE;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);   
+        background: rgba(0, 0, 0, .5);
+        padding: 10px;
+        
+    }
 .footer {
     grid-area: f;
     background: yellow;
