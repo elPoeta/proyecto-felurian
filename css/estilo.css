@@ -104,7 +104,7 @@ body{
       
       .nav-panel  a{
         padding:10px 10px 10px 30px;
-        font-size:1rem;
+        font-size:1.3rem;
         font-weight: 900;
         color:#fff;
         display:block;
@@ -156,9 +156,17 @@ body{
       
 .content {
     grid-area: c;
-    background: steelblue;
+    background: #DDDDDE;;
+}
+.content .banners {
+   max-width: 760px;
+   margin: auto;
 }
 
+ .content .banners #slider{
+        width: 100%;
+
+}
 .footer {
     grid-area: f;
     background: yellow;
@@ -173,7 +181,7 @@ body{
         display: grid;
         grid-gap: 1px;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 40px auto 40px;
+        grid-template-rows: 50px auto 40px;
         grid-template-areas: 
             "h h h h h h h h h h h h"
             "m m c c c c c c c c c c"
@@ -184,4 +192,15 @@ body{
         display: none;
     }
 }
+
+@keyframes fadeIn{
+    to{
+      opacity : 1;
+    }
+  }
+  
+  .fade-in{
+    opacity : 0;
+    animation : fadeIn .5s ease-in 1 forwards;
+  }
 
