@@ -1,6 +1,6 @@
 let tiempo = 5000;
 let i = 0;
-const btnNavIcon = document.querySelector('#nav-icon');
+const btnNavIcon = document.querySelector('#nav-icon-hamburger');
 const btnNavPanel = document.querySelector('#btn-nav-panel'); 		
 const imagenes = ['img/banner0.png','img/banner1.png','img/banner3.png','img/banner2.png','img/banner4.png'];
 const slider = document.querySelector('#slider');

@@ -16,39 +16,44 @@
 
 <body>
     <div class="container">
-        <div class="header">
+        <header class="header"> 
+                <div class="nav-hamburger">
+                        <a href="#" id="nav-icon-hamburger">&#9776;</a>
+                </div>
             <div class="home">
                 <h1>
                     <a href="index.html">Felurian</a>
                 </h1>
             </div>
+            
+            <div class="search">
+                <i class="fas fa-search">
+                    <input type="text" id="buscar" placeholder="Buscar...">
+                </i>
+            </div>
+
             <div class="login">
                 <i class="fas fa-user"></i>
             </div>
-        </div>
-        
-        <div class="carrito">
-            <div class="search">
-                <i class="fas fa-search">
-                    <input type="text" id="buscar">
-                </i>
-            </div>
+            
             <div class="cart">
                 <i class="fas fa-shopping-cart">(<span id="cart-cantidad">0</span>)</i>
             </div>
-        </div>
 
-        <div class="nav">
-            <a href="#" id="nav-icon">&#9776;</a>
-        </div>
-        <div class="nav-panel">
-            <a href="#" class="btn-cerrar" id="btn-nav-panel">&times;</a>
-            <ul id="panel-side-menu">
+        </header>
+       
+        <nav class="nav-menu">
+            <div class="nav-large-menu">MENU</div>
+        </nav> 
+        
+      
 
-            </ul>
+        <div class="side">
+            SIDE
         </div>
 
         <div class="content" id="panel-content">
+            
             <div class="banners">
                 <img id="slider" />
             </div>
@@ -96,6 +101,14 @@
         <div class="footer">FOOTER</div>
 
     </div>
+
+    <div class="nav-panel">
+            <a href="#" class="btn-cerrar" id="btn-nav-panel">&times;</a>
+            <ul id="panel-side-menu">
+
+            </ul>
+    </div>
+   
 </body>
 
 </html>

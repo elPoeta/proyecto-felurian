@@ -12,83 +12,58 @@ body{
     display: grid;
     grid-gap: 1px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 50px 40px auto 40px;
+    grid-template-rows: 50px auto 40px;
     grid-template-areas: 
-        "m h h h h h h h h h h h"
-        "l l l l l l l l l l l l"
+        "h h h h h h h h h h h h"
         "c c c c c c c c c c c c"
         "f f f f f f f f f f f f";
 }
 
 .header {
     grid-area: h;
-    display: flex;
-    padding: .5rem;
-    background: #933157;
-}
-    
-    .header h1 a {
-        text-transform: uppercase;
-        font-weight: 900;
-        color: #fff;
-    }
-    .header .login {
-        margin-left: auto;
-    }
-    .header .login .fa-user{
-        color: #fff;
-        font-size: 1.5rem;
-        padding: .3rem;
-    }
-
-.carrito {
-    grid-area: l;
-    display: flex;
-    padding: .5rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     background: #48001E;
-   
-}
-    .carrito .search{
-        margin-right: auto;
-    }
-    .carrito .fa-search{
-        color: #fff;
-        padding: .3rem;
-    }
-    .carrito .search #buscar{
-        border: none;
-        background: #48001E;
-        border-bottom: 1px solid #fff;
-        color: #DC93AF;
-        font-size: 1rem;
-        margin-left: 10px;
-    }
-    .carrito .cart{
-        margin-left: auto;
-    }
-    .carrito .cart .fa-shopping-cart{
-        color: #fff;
-        padding: .3rem;
-    }
-.nav {
-    grid-area: m;
-    justify-items: center;
-    background: #933157;
-   
-}
-  
-    .nav #nav-icon{
+}   
+    .header .nav-hamburger #nav-icon-hamburger{
         font-size: 30px;
-        line-height: 45px;
-        padding: .7em;
+        line-height: 40px;
+        padding: .3em;
         color: white;
         text-align: center;
         font-weight: 700;
     }
 
-    .nav #nav-icon:hover{
+    .header .nav-hamburger #nav-icon-hamburger:hover{
         color: #DC93AF;
         cursor: pointer;
+    }
+    .header h1 a {
+        text-transform: uppercase;
+        font-size:1.8rem;
+        font-weight: 700;
+        color: #fff;
+        padding: 8px;
+    }
+
+    .header .search {
+        display: none;
+    }
+    .header .login {
+     grid-column: 7 / 9;
+     padding: 8px;   
+    }
+    .header .login .fa-user{
+        color: #fff; 
+    }
+
+    .header .cart{
+        grid-column-end: -1;
+        padding: 8px;
+    }
+    .header .cart .fa-shopping-cart{
+        color: #fff;
+  
     }
     .nav-panel {
         height:100%;
@@ -219,20 +194,59 @@ body{
         display: grid;
         grid-gap: 1px;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 50px auto 40px;
+        grid-template-rows: 60px 40px auto 40px;
         grid-template-areas: 
             "h h h h h h h h h h h h"
-            "m m c c c c c c c c c c"
+            "m m m m m m m m m m m m"
+            "s s c c c c c c c c c c"
             "f f f f f f f f f f f f";
     }
-
-    .carrito{
+    .header .home{
+        grid-column: 3 / 4;
+        padding: 8px;
+    }
+    .header .home h1 a{
+        font-weight: 900;
+        font-size: 2rem;
+    }
+    .header .search {
+        display: inline-grid;
+        grid-column: 6 / 9;
+        padding: 12px;
+    }
+    .header .search .fa-search{
+        color: #fff;
+        
+    }
+    .header .search #buscar{
+        border: none;
+        background: #48001E;
+        border-bottom: 2px solid #fff;
+        color: #fff;
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+    
+   .header .login{
+    grid-column: 10 / 11;
+    padding: 12px;
+   }
+   .header .cart{
+       grid-column: 11 / 12;
+       padding: 12px; 
+   }
+    .header .nav-hamburger #nav-icon-hamburger{
         display: none;
+    }
+     
+    .nav-menu{
+        grid-area: m;
+        background: #933157;
     }
 
     .content .content-grilla{
          grid-template-columns: 1fr 1fr;
-        justify-items: center;
+         justify-items: center;
         
     }
 }
