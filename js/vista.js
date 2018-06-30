@@ -92,3 +92,4 @@ const categorias = [
 let m = new Menu;
 m.add(categorias);
 m.viewMenu('#panel-side-menu');
+m.viewMenu('#menu-large');
