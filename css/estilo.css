@@ -24,6 +24,9 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     background: #48001E;
+    position: fixed;
+    top : 0;
+    z-index: 100;
 }   
     .header .nav-hamburger #nav-icon-hamburger{
         font-size: 30px;
@@ -192,9 +195,9 @@ body{
     .container {
         height: 100vh;
         display: grid;
-        grid-gap: 1px;
+        
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 60px 40px auto 40px;
+        grid-template-rows: 60px 50px auto 40px;
         grid-template-areas: 
             "h h h h h h h h h h h h"
             "m m m m m m m m m m m m"
@@ -212,7 +215,7 @@ body{
     .header .search {
         display: inline-grid;
         grid-column: 6 / 9;
-        padding: 12px;
+        padding: 10px;
     }
     .header .search .fa-search{
         color: #fff;
@@ -239,9 +242,12 @@ body{
         display: none;
     }
      
-    .nav-menu{
+.nav-menu{
         grid-area: m;
         background: #933157;
+        position: sticky;
+        top : 60px;
+        z-index: 90;       
     }
 
     .content .content-grilla{
