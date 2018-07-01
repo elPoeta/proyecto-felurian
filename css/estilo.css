@@ -209,7 +209,7 @@ body{
     color : #933157;
   }
   
-  .btn-agregar{
+  #btn-agregar{
     background : #116611;
     color : #fff;
     border : 0px;
@@ -219,7 +219,7 @@ body{
     
   }
   
-  .btn-agregar:hover{
+  #btn-agregar:hover{
     background : #55AA55;
     cursor : pointer;
     
@@ -244,7 +244,7 @@ body{
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
   }
 
-.btn-agregar .fa-cart-plus {
+#btn-agregar .fa-cart-plus {
     padding: 5px;
 }
 @media screen and (min-width : 900px){

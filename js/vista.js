@@ -38,10 +38,10 @@ class Categoria{
             <h2 class="titulo-card">${producto.nombre}</h2>
             <h3 class="precio-card">$ ${producto.precio}</h3>
             <hr>
-            <button class="btn-agregar"><i class="fas fa-cart-plus"> </i>Agregar</button>
-            </div>`).join('')}</section>`;
-            
-        document.querySelector(idPanel).innerHTML = template;
+            <button id="btn-agregar" onclick=agregarProdutoACarrito(${producto.id});><i class="fas fa-cart-plus"> </i>Agregar</button>
+            </div>`).join('')}</section>`;    
+            document.querySelector(idPanel).innerHTML = template;
+        
     }
 }
 const categorias = [

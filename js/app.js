@@ -1,5 +1,6 @@
 let tiempo = 5000;
 let i = 0;
+const cartCantidad = document.querySelector('#cart-cantidad');
 const btnNavIcon = document.querySelector('#nav-icon-hamburger');
 const btnNavPanel = document.querySelector('#btn-nav-panel'); 		
 const imagenes = ['img/banner0.png','img/banner1.png','img/banner3.png','img/banner2.png','img/banner4.png'];
@@ -25,6 +26,12 @@ const cambiarImagen = () =>{
 	}
    setTimeout(() => slider.classList.remove('fade-in'), 500);
    setTimeout('cambiarImagen()',tiempo);
+}
+
+
+let cantidad =0;
+function agregarProdutoACarrito(idProducto){
+  cartCantidad.textContent=++cantidad;
 }
 
 
