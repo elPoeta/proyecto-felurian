@@ -26,4 +26,6 @@ const cambiarImagen = () =>{
    setTimeout(() => slider.classList.remove('fade-in'), 500);
    setTimeout('cambiarImagen()',tiempo);
 }
+
+
 window.onload=cambiarImagen;

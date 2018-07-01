@@ -1,25 +1,49 @@
 class Menu{
-    viewMenu(idPanel){
-        let categorias = this.datos;
-        let template =  categorias.map( categoria =>
-                    `<li><a href="${categoria.id}">${categoria.nombre}</a>
-                        <ul class="hide-menu">
-                          ${categoria.subCategorias.map( sub =>
-                           `<li><a href="${sub.id}">${sub.nombre}</a></li>`
-                        ).join('')}</ul></li>`
-                     ).join('');
-        document.querySelector(idPanel).innerHTML = template;
-      }
-      add(categoria){
+    add(categoria){
         if( this.datos === undefined ){
           this.datos = [];
         }
         this.datos = categoria;
         
       }
+
+    viewMenu(idPanel){
+        let categorias = this.datos;
+        let template =  categorias.map( categoria =>
+                    `<li><a href="#" onclick=buscarPorCategoria(${categoria.id});>${categoria.nombre}</a>
+                        <ul class="hide-menu">
+                          ${categoria.subCategorias.map( sub =>
+                           `<li><a href="#" onclick=buscarPorSubCategoria(${sub.id});>${sub.nombre}</a></li>`
+                        ).join('')}</ul></li>`
+                     ).join('');
+        document.querySelector(idPanel).innerHTML = template;
+      }
+      
 }
 
-
+class Categoria{
+    add(productos){
+        if( this.datos === undefined ){
+          this.datos = [];
+        }
+        this.datos = productos;  
+      }
+    viewProductos(id, idPanel){
+        let productos = this.datos;
+        let template =  `<section class="contenedor-productos text-center">
+                         ${productos.map(producto =>
+           `<div class="card">
+              <img src="${producto.imagen}" class="img-card">
+          
+            <h2 class="titulo-card">${producto.nombre}</h2>
+            <h3 class="precio-card">$ ${producto.precio}</h3>
+            <hr>
+            <button class="btn-agregar"><i class="fas fa-cart-plus"> </i>Agregar</button>
+            </div>`).join('')}</section>`;
+            
+        document.querySelector(idPanel).innerHTML = template;
+    }
+}
 const categorias = [
     {
         "id": 1,
@@ -89,7 +113,274 @@ const categorias = [
     }
 ];
 
+const productos = [
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    ////////////////////////////////////////////////////////////////////////
+
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    },
+    {
+        "id": 1,
+        "nombre" : "Vino Tinto 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 1,
+                            "nombre":"Tintos"
+                        }
+            },
+        "imagen":"img/tinto.png",
+        "precio":124    
+    },
+    {
+        "id": 2,
+        "nombre" : "Vino Blanco 1",
+        "categorias":
+            {
+                    "id": 1,
+                    "nombre" : "Vinos",
+                    "subCategorias":
+                        {
+                            "id": 2,
+                            "nombre":"Blancos"
+                        }
+            },
+        "imagen":"img/blanco.png",
+        "precio":102    
+    }
+];
+
 let m = new Menu;
 m.add(categorias);
 m.viewMenu('#panel-side-menu');
 m.viewMenu('#menu-large');
+
+function buscarPorCategoria(id){
+    const vista = new Categoria();
+    vista.add(productos);
+    vista.viewProductos(id, '#panel-content');
+  }
