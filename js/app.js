@@ -1,38 +1,56 @@
-let tiempo = 5000;
-let i = 0;
+let pos = 0;
+let turno = 0;
+let txtBanner = ["Poesía embotellada", "Tienda de vinos"];
+let tipeo = document.querySelector('#tipeo-contenedor');
+const speed = 200;
 const cartCantidad = document.querySelector('#cart-cantidad');
 const btnNavIcon = document.querySelector('#nav-icon-hamburger');
 const btnNavPanel = document.querySelector('#btn-nav-panel'); 		
-const imagenes = ['img/banner0.png','img/banner1.png','img/banner3.png','img/banner2.png','img/banner4.png'];
-const slider = document.querySelector('#slider');
 
-btnNavIcon.addEventListener('click', (e)=>{
+
+
+
+setTimeout(autoTipeo, speed);
+
+function autoTipeo() {
+  if (pos < txtBanner[turno].length) {
+    tipeo.innerHTML += txtBanner[turno].charAt(pos);
+    pos++;
+    setTimeout(autoTipeo, speed);
+  } else {
+  	setTimeout(borrarTipeo, speed+100);
+  }
+}
+
+function borrarTipeo() {
+	if (pos >= 0) {
+      var str=txtBanner[turno].toString().substring(0, pos);
+      tipeo.innerHTML = str;
+      pos--;
+      setTimeout(borrarTipeo, speed-100);
+    } else {
+      turno++;
+      if(turno>=txtBanner.length) 
+        turno=0;
+      setTimeout(autoTipeo, speed);
+    }
+}
+
+
+btnNavIcon.addEventListener('touchstart', (e)=>{
     e.preventDefault();
     document.querySelector('.nav-panel').style.width='250px';
 });
 
-btnNavPanel.addEventListener('click', (e)=>{
+btnNavPanel.addEventListener('touchstart', (e)=>{
     e.preventDefault();
     document.querySelector('.nav-panel').style.width='0px';
 });
 
-const cambiarImagen = () =>{
-  slider.src = imagenes[i];
-  slider.classList.add('fade-in');
-	if(i < imagenes.length - 1){
-	  i++; 
-	} else { 
-		i = 0;
-	}
-   setTimeout(() => slider.classList.remove('fade-in'), 500);
-   setTimeout('cambiarImagen()',tiempo);
-}
+
 
 
 let cantidad =0;
 function agregarProdutoACarrito(idProducto){
   cartCantidad.textContent=++cantidad;
 }
-
-
-window.onload=cambiarImagen;
