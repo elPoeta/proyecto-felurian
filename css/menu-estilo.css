@@ -142,7 +142,27 @@
   .busqueda{
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
+ 
+  }
+  #buscar{
+    background: #48001E;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #fff;
+  }
+  .img-lupa-buscar{
+    width: 25px;
+    max-height: 25px;
+    padding-top: 15px;
+   }
+  .user{
+
+    width: 30px;
+    max-height: 20px;
+    padding: 8px;
+    padding-top: 15px;
   }
  .logo{
    display: flex;

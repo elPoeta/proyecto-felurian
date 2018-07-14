@@ -3,5 +3,9 @@
 }
 
 @media  (min-width : 1100px){
+    .side{
+        display: grid;
+        grid-area: s;
+    }
     
 }
