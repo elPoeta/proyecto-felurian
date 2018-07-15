@@ -45,7 +45,7 @@ class Productos{
     viewProductos(idPanel){
         let productos = this.datos;
         let template =  `<section class="contenedor-productos text-center">
-                         ${productos.map(producto =>
+                         ${productos.map((producto, index) =>
            `<div class="card">
             <div class="zona-lupa">
               <img src="${producto.imagen}" class="img-card" id="img-${producto.id}">
@@ -53,7 +53,7 @@ class Productos{
             <h2 class="titulo-card">${producto.nombre}</h2>
             <h3 class="precio-card">$ ${producto.precio}</h3>
             <hr>
-            <button class="btn-agregar" onclick=agregarProductoACarrito(${producto.id})>Agregar</button>
+            <button class="btn-agregar" onclick="agregarProductoACarrito(${index})">Agregar</button>
             </div>`).join('')}</section>`;   
             document.querySelector(idPanel).innerHTML = template;
            
