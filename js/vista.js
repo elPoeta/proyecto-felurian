@@ -18,7 +18,13 @@ class Menu{
                         ).join('')}</ul></li>`
                      ).join('');
         document.querySelector(idPanel).innerHTML = template;
-                     let categoria = document.querySelectorAll('.categoria');
+                     menuEventos();
+      }
+      
+}
+
+function menuEventos(){
+    let categoria = document.querySelectorAll('.categoria');
                      for (let i = 0; i < categoria.length; i++) {
                         categoria[i].addEventListener('touchstart', ()=> {
                             let id = categoria[i].getAttribute('id');
@@ -27,8 +33,6 @@ class Menu{
                         });
                       
                       }
-      }
-      
 }
 
 class Productos{
@@ -49,24 +53,27 @@ class Productos{
             <h2 class="titulo-card">${producto.nombre}</h2>
             <h3 class="precio-card">$ ${producto.precio}</h3>
             <hr>
-            <button id="btn-agregar" onclick=agregarProdutoACarrito(${producto.id});><i class="fas fa-cart-plus"> </i>Agregar</button>
-            </div>`).join('')}</section>`;    
+            <button class="btn-agregar" onclick=agregarProductoACarrito(${producto.id})>Agregar</button>
+            </div>`).join('')}</section>`;   
             document.querySelector(idPanel).innerHTML = template;
            
-         let zonaLupa = document.querySelectorAll('.zona-lupa');
-            let imgCard = document.querySelectorAll('.img-card');
-            for (let i = 0; i < imgCard.length; i++) {
-
-              imgCard[i].addEventListener('mouseenter', ()=> {
-                let id = imgCard[i].getAttribute('id');
-                zoom(id, 3);
-              });
+            lupaEventos();
             
-            }
-            removerLupa(zonaLupa);
     }
 }
 
+function lupaEventos(){
+    let zonaLupa = document.querySelectorAll('.zona-lupa');
+    let imgCard = document.querySelectorAll('.img-card');
+    for (let i = 0; i < imgCard.length; i++) {
+      imgCard[i].addEventListener('mouseenter', ()=> {
+        let id = imgCard[i].getAttribute('id');
+        zoom(id, 3);
+      });
+    
+    }
+    removerLupa(zonaLupa);
+}
 
 function  cargarProductos(){
     const vista = new Productos();
@@ -77,7 +84,7 @@ function  cargarProductos(){
 
 
   function zoom(imgID, zoom) {
-    var img, glass, w, h, bw;
+    let img, glass, w, h, bw;
     img = document.querySelector('#'+imgID);
 
   
@@ -102,7 +109,7 @@ function  cargarProductos(){
     glass.addEventListener("touchmove", moveMagnifier);
     img.addEventListener("touchmove", moveMagnifier);
     function moveMagnifier(e) {
-      var pos, x, y;
+      let pos, x, y;
    
       e.preventDefault();
     
@@ -122,7 +129,7 @@ function  cargarProductos(){
     }
   
     function getCursorPos(e) {
-      var a, x = 0, y = 0;
+      let a, x = 0, y = 0;
       e = e || window.event;
    
       a = img.getBoundingClientRect();
@@ -257,7 +264,7 @@ const productos = [
 
     {
         "id": 3,
-        "nombre" : "Vino Tinto 1",
+        "nombre" : "Vino Tinto 2",
         "categorias":
             {
                     "id": 1,
@@ -273,7 +280,7 @@ const productos = [
     },
     {
         "id": 4,
-        "nombre" : "Vino Blanco 1",
+        "nombre" : "Vino Blanco 2",
         "categorias":
             {
                     "id": 1,

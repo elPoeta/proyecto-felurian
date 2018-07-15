@@ -3,7 +3,6 @@ let turno = 0;
 let txtBanner = ["Poesía embotellada", "Tienda de vinos"];
 let tipeo = document.querySelector('#tipeo-contenedor');
 const speed = 250;
-const cartCantidad = document.querySelector('#cart-cantidad');
 const btnNavIcon = document.querySelector('#nav-icon-hamburger');
 const btnNavPanel = document.querySelector('#btn-nav-panel'); 		
 
@@ -49,8 +48,3 @@ btnNavPanel.addEventListener('touchstart', (e)=>{
 
 
 
-
-let cantidad =0;
-function agregarProdutoACarrito(idProducto){
-  cartCantidad.textContent=++cantidad;
-}

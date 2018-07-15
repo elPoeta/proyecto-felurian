@@ -22,7 +22,7 @@
     color : #933157;
   }
   
-  #btn-agregar{
+  .btn-agregar{
     background : #116611;
     color : #fff;
     border : 0px;
@@ -32,7 +32,7 @@
     
   }
   
-  #btn-agregar:hover{
+  .btn-agregar:hover{
     background : #55AA55;
     cursor : pointer;
     
