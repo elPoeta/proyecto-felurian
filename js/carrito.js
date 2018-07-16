@@ -2,10 +2,18 @@ const cartCantidad = document.querySelector('#carrito-cantidad');
 const carrito = document.querySelector('.carrito-img');
 let carritoDeCompras;
 let cantidad =0;
-
+const  panel = document.querySelector('.panel-carrito');
 carrito.addEventListener('click', (e)=>{
     e.preventDefault();
     console.log(cantidad);
+   console.log(panel);
+   if(panel.classList.contains('hide-panel')){
+    panel.classList.remove('hide-panel');
+}
+else{
+    panel.classList.add('hide-panel');
+}
+   
 });
 
 function agregarProductoACarrito(id){

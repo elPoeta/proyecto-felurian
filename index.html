@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/principal-estilo.css">
     <link rel="stylesheet" href="css/side-estilo.css">
     <link rel="stylesheet" href="css/footer-estilo.css">
+    <link rel="stylesheet" href="css/carrito-estilo.css">
     <link rel="stylesheet" href="css/productos-estilo.css">
     
     <script src="js/vista.js" defer></script>
@@ -49,6 +50,44 @@
                 <img src="img/carrito.svg" class="carrito-img"alt="carrito">
                 <p class="carrito-text">(<span id="carrito-cantidad">0</span>)</p>
             </div>
+           
+            <div>
+                    <div class="panel-carrito hide-panel">
+                        <ul class="panel-carrito-grid">
+                            <li class="lista-panel-carrito">
+                                    <img src="img/blanco.png" alt="wine" class="img-panel-carrito">
+                                    <h5 class ="nombreProducto-panel-carrito">Vino Blanco $124</h5>
+                                    <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
+                                    <div class="rango-panel-carrito">
+                                        <span class="rango-span">10</span>
+                                        <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
+                                      
+                                    </div>
+                                    
+                                    
+                                      <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
+                            </li>  
+                            <hr>
+                            <li class="lista-panel-carrito">
+                                <img src="img/tinto.png" alt="wine" class="img-panel-carrito">
+                                <h5 class="nombreProducto-panel-carrito">Vino Tinto $522</h5>
+                                <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
+                                <div class="rango-panel-carrito">
+                                    <span class="rango-span">1</span>
+                                    <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
+                                  
+                                </div>
+                                <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
+                        </li>  
+                        <hr>
+                        </ul> 
+                      
+                            <h5 class="total-panel-carrito">total $124</h5>    
+                        
+                        <button class="btn-finalizarCompra">Finalizar Compra</button>
+                    </div>
+            </div>
+            
         </header>
 
         <nav class="nav-menu">
@@ -127,6 +166,7 @@
 
             </ul>
     </div>
+
    
 </body>
 
