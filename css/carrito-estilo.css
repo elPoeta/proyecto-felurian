@@ -1,14 +1,14 @@
 .panel-carrito{
     width: 20%;
-    left: 79%;
+    left: 70%;
     height: auto;
     padding: 5px;
     position: fixed;
     z-index:100;
-    top:50px;
+    top:100px;
     background-color:#DC93AF;
     border-radius: 15px;
-    opacity: .9;   
+    opacity: 1;   
     overflow: hidden;
     text-align: center;
     transition: max-height 0.5s linear;
@@ -48,6 +48,7 @@
 .eliminarProducto-panel-carrito{
     font-size: 1.8rem;
     color: #fff;
+    text-decoration: none;
 }
 
 .eliminarProducto-panel-carrito:hover{

@@ -1,5 +1,5 @@
-const cartCantidad = document.querySelector('#carrito-cantidad');
-const carrito = document.querySelector('.carrito-img');
+const cartCantidad = document.querySelector('#cantidadEnCarrito');
+const carrito = document.querySelector('.carrito-logo');
 let carritoDeCompras;
 let cantidad =0;
 const  panel = document.querySelector('.panel-carrito');

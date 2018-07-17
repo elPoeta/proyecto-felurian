@@ -1,35 +1,14 @@
-*{
-    text-decoration: none;
-}
 body{
     font-family: 'Lato', sans-serif; 
 }
-
-.container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 70px auto 80px;
+.contenedor{
+    display : grid;
+    grid-template-columns: repeat(8 1fr);
+    grid-template-rows: 100px 60px auto 100px;
     grid-template-areas: 
-        "h h h"
-        "c c c"
-        "f f f";
-}
+        "hd hd hd hd hd hd hd hd"
+        "nb nb nb nb nb nb nb nb"
+        "sd sd ms ms ms ms ms ms"
+        "fo fo fo fo fo fo fo fo";
 
-
-@media screen and (min-width : 1100px){
-    .container {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 70px 70px auto 80px;
-        grid-template-areas: 
-            "h h h h h h"
-            "m m m m m m"
-            "s c c c c c"
-            "f f f f f f";
-    }
-
-    .nav-hamburger{
-        display: none;
-    }
-    
 }

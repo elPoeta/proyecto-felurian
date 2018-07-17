@@ -1,173 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/contenedor-estilo.css">
-    <link rel="stylesheet" href="css/menu-estilo.css">
-    <link rel="stylesheet" href="css/principal-estilo.css">
+    <link rel="stylesheet" href="css/header-estilo.css">
+    <link rel="stylesheet" href="css/navegacion-estilo.css">
     <link rel="stylesheet" href="css/side-estilo.css">
+    <link rel="stylesheet" href="css/mainSection-estilo.css">
     <link rel="stylesheet" href="css/footer-estilo.css">
-    <link rel="stylesheet" href="css/carrito-estilo.css">
     <link rel="stylesheet" href="css/productos-estilo.css">
-    
-    <script src="js/vista.js" defer></script>
+    <link rel="stylesheet" href="css/carrito-estilo.css">
+
+    <script src="js/datos.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/productos.js" defer></script>
+    <script src="js/lupa.js" defer></script>
     <script src="js/carrito.js" defer></script>
-    <script src="js/app.js" defer></script>
-    
-    <title>Felurian</title>
+    <script src="js/main.js" defer></script>
+
+    <title>Felurian Wine Store</title>
 </head>
-
 <body>
-     <div class="container">
-      
+    <div class="contenedor">
+        
         <header class="header">
-            <div class="nav-hamburger">
-                <a href="#" id="nav-icon-hamburger">&#9776;</a>
-            </div>
-            <div class="logo">
-                <a href="index.html" class="logo"><img src="img/logo-uva.svg" alt="Felurian" class="logo-img"></a>
-                <a href="index.html" class="logo"><h1 class="logo-texto">Felurian</h1></a>
-            </div>
-
-            <div class="busqueda">
-                <div class="search">
-                        <img src="img/lupa.svg" class="img-lupa-buscar">
-                        <input type="text" id="buscar" placeholder="Buscar...">
-                   
-                </div>
-    
-                <div class="login">
-                    <img src="img/user.svg" class="user">
-                </div>
-            </div>
-            <div class="carrito-compras">
-                <img src="img/carrito.svg" class="carrito-img"alt="carrito">
-                <p class="carrito-text">(<span id="carrito-cantidad">0</span>)</p>
-            </div>
-           
-            <div>
-                    <div class="panel-carrito hide-panel">
-                        <ul class="panel-carrito-grid">
-                            <li class="lista-panel-carrito">
-                                    <img src="img/blanco.png" alt="wine" class="img-panel-carrito">
-                                    <h5 class ="nombreProducto-panel-carrito">Vino Blanco $124</h5>
-                                    <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
-                                    <div class="rango-panel-carrito">
-                                        <span class="rango-span">10</span>
-                                        <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
-                                      
-                                    </div>
-                                    
-                                    
-                                      <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
-                            </li>  
-                            <hr>
-                            <li class="lista-panel-carrito">
-                                <img src="img/tinto.png" alt="wine" class="img-panel-carrito">
-                                <h5 class="nombreProducto-panel-carrito">Vino Tinto $522</h5>
-                                <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
-                                <div class="rango-panel-carrito">
-                                    <span class="rango-span">1</span>
-                                    <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
-                                  
-                                </div>
-                                <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
-                        </li>  
-                        <hr>
-                        </ul> 
-                      
-                            <h5 class="total-panel-carrito">total $124</h5>    
-                        
-                        <button class="btn-finalizarCompra">Finalizar Compra</button>
-                    </div>
-            </div>
             
+            <figure>
+                <a href="index.html"><img src="img/logo-header.svg" alt="Felurian" class="logo-header"></a>
+            </figure>
+
+            <h1 class="titulo-header"><a href="index.html">Felurian</a></h1>
+           
+            <div class="form-busqueda">
+                <input type="search" id="buscar" placeholder="Buscar...">
+                <figure>
+                    <img src="img/lupa.svg" alt="buscar" class="logo-buscar">
+                </figure>
+            </div>
+            <div class="contenedor-login">
+                <figure>
+                    <img src="img/user.svg" alt="login" class="logo-user">
+                </figure>
+                <a href="#" class="login">Login</a>
+            </div>
+            <div class="compras">
+                <figure>
+                    <img src="img/carrito.svg" alt="carrito" class="carrito-logo">
+                </figure>
+
+                <div class="cantidadDeProductos"><p id="cantidadEnCarrito">0</p></div>
+            </div>
         </header>
+        
+        <nav class="nav-bar">
+            <div class="nav-menu" >
+                <ul id="menu-template">
 
-        <nav class="nav-menu">
-                <div class="nav-large-menu" >
-                    <ul id="menu-large">
-    
-                    </ul>
-                </div>
-            </nav> 
-            
-   <section class="side">
-       <div class="panel-side">
-           <div class="fitro">
-                Filtro de busqueda
-           </div>
-           
-       </div>
-   </section>
-        <section class="main-content">
-            <div id="panel-content">
-              <div class="banner">
-                  <div class="banner-badge">
-                        <img src="img/uvas.svg" class="logo-banner-img">
-                  </div>
- 
-                <span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span>
-                <span id="tipeo-contenedor"></span>
-                <span class='tipeo-cursor'>|</span>   
-              </div>
-
-                <div class="content-grilla">
-                    <div >
-                        <a class="fondo-grilla" href="#">
-                            <div class="texto-grilla">
-                                <h2>Promociones</h2>
-                            </div>
-                            <img src="img/promos-grilla.jpg">
-                        </a>
-                    </div>
-    
-                    <div >
-                        <a class="fondo-grilla" href="#" onclick="cargarProductos();">
-                            <div class="texto-grilla">
-                                <h2>Vinos</h2>
-                            </div>
-                            <img src="img/vinos-grilla.jpg">
-                        </a>
-                    </div>
-    
-                    <div >
-                        <a class="fondo-grilla" href="#">
-                            <div class="texto-grilla">
-                                <h2>Delicias</h2>
-                            </div>
-                            <img src="img/delicias-grilla.jpg">
-                        </a>
-                    </div>
-    
-                    <div >
-                        <a class="fondo-grilla" href="#">
-                            <div class="texto-grilla">
-                                <h2>Accesorios</h2>
-                            </div>
-                            <img src="img/accesorios-grilla.jpg">
-                        </a>
-                    </div>
+                </ul>
             </div>
+        </nav>
+        
+        <aside class="side">
+            sd
+        
+        </aside>
+        
+        <section class="main-section">
+            <div id="panel-content">
+                
+                <div class="banner">
+               
+                    <div class="banner-badge">
+                          <img src="img/logo-banner.svg" class="logo-banner-img">
+                    </div>
+   
+                  <span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span>
+                  <span id="tipeo-contenedor"></span>
+                  <span class='tipeo-cursor'>|</span>   
+               
+                </div>
+  
+                  <div class="content-grilla">
+               
+                    <div>
+                          <a class="fondo-grilla" href="#">
+                              <div class="texto-grilla">
+                                  <h2>Promociones</h2>
+                              </div>
+                              <img src="img/promos-grilla.jpg">
+                          </a>
+                      </div>
+      
+                  <div>
+                          <a class="fondo-grilla" href="#" onclick="cargarProductos();">
+                              <div class="texto-grilla">
+                                  <h2>Vinos</h2>
+                              </div>
+                              <img src="img/vinos-grilla.jpg">
+                          </a>
+                 </div>
+       
+                <div>
+                          <a class="fondo-grilla" href="#">
+                              <div class="texto-grilla">
+                                  <h2>Delicias</h2>
+                              </div>
+                              <img src="img/delicias-grilla.jpg">
+                          </a>
+                      </div>
+      
+                      <div>
+                          <a class="fondo-grilla" href="#">
+                              <div class="texto-grilla">
+                                  <h2>Accesorios</h2>
+                              </div>
+                              <img src="img/accesorios-grilla.jpg">
+                          </a>
+                      </div>
+              </div>
         </section>
         
-        <footer class="footer">FOOTER</footer>
-     </div>
-
-     <div class="nav-panel">
-            <a href="#" class="btn-cerrar-nav-panel" id="btn-nav-panel" >&times;</a>
-            <ul id="panel-side-menu">
-
-            </ul>
+        <footer class="footer">
+            <p class="autor">&copy; <a href="https://ar.linkedin.com/in/leonardo-tosetto" target="_blank">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank">@elPoeta</a></p>
+        </footer>
     </div>
 
-   
+    <div>
+        <div class="panel-carrito hide-panel">
+            <ul class="panel-carrito-grid">
+                <li class="lista-panel-carrito">
+                        <img src="img/blanco.png" alt="wine" class="img-panel-carrito">
+                        <h5 class ="nombreProducto-panel-carrito">Vino Blanco $124</h5>
+                        <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
+                        <div class="rango-panel-carrito">
+                            <span class="rango-span">10</span>
+                            <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
+                          
+                        </div>
+                        
+                        
+                          <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
+                </li>  
+                <hr>
+                <li class="lista-panel-carrito">
+                    <img src="img/tinto.png" alt="wine" class="img-panel-carrito">
+                    <h5 class="nombreProducto-panel-carrito">Vino Tinto $522</h5>
+                    <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
+                    <div class="rango-panel-carrito">
+                        <span class="rango-span">1</span>
+                        <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
+                      
+                    </div>
+                    <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
+            </li>  
+            <hr>
+            </ul> 
+          
+                <h5 class="total-panel-carrito">total $124</h5>    
+            
+            <button class="btn-finalizarCompra">Finalizar Compra</button>
+        </div>
+</div>
 </body>
-
 </html>

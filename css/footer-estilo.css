@@ -1,4 +1,20 @@
-.footer {
-    grid-area: f;
-    background: cadetblue;
+.footer{
+    display: grid;
+    grid-area: fo;
+    background: #933157;
+}
+.autor{
+    font-size: 2rem;
+    text-align: center;
+    align-self: center;
+    color: #fff;
+}
+
+.autor a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.autor a:hover{
+    color:#48001E;
 }
