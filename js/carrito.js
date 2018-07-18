@@ -1,4 +1,4 @@
-const cartCantidad = document.querySelector('#cantidadEnCarrito');
+const cartCantidad = document.querySelector('#cantidadEnCarritoCompras');
 const carrito = document.querySelector('.carrito-logo');
 let carritoDeCompras;
 let cantidad =0;
