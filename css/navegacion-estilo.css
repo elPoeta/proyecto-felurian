@@ -53,3 +53,25 @@
     .nav-menu ul li:hover .hide-menu{
         display: inline-table;
     }
+
+    @media screen and (max-width : 1200px){
+        .nav-bar{
+            top : 70px;
+        }
+
+            
+        #menu-template  a{
+            padding: 8px;
+            font-size:1.3rem;
+            }
+    }    
+
+    @media screen and (max-width : 750px){
+ 
+      }
+    
+      @media screen and (max-width : 524px){
+        .nav-bar{
+            display: none;
+        }
+      }

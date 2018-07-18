@@ -3,3 +3,11 @@
     grid-area: sd;
     background: slategray;
 }
+
+@media screen and (max-width : 750px){}
+
+@media screen and (max-width : 524px){
+    .side{
+        display: none;
+    }
+}

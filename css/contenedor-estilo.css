@@ -12,3 +12,24 @@ body{
         "fo fo fo fo fo fo fo fo";
 
 }
+
+@media screen and (max-width : 1200px){
+    .contenedor{
+        grid-template-rows: 70px 40px auto 70px;
+    }
+}
+@media screen and (max-width : 750px){}
+
+@media screen and (max-width : 524px){
+    .contenedor{
+        display : grid;
+        grid-template-columns: repeat(6 1fr);
+        grid-template-rows: 60px auto 60px;
+        grid-template-areas: 
+            "mh hd hd hd hd hd"
+            "ms ms ms ms ms ms"
+            "fo fo fo fo fo fo";
+    
+    }
+    
+}

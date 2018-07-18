@@ -77,3 +77,28 @@
     position: relative;
     
   }
+
+  @media screen and (max-width : 1200px){
+    .contenedor-productos{
+      max-width : 80%;
+      grid-template-columns: repeat(3,1fr);
+      
+    }
+  
+  }
+
+  @media screen and (max-width : 750px){
+    .contenedor-productos{
+      max-width : 85%;
+      grid-template-columns: repeat(2,1fr);
+      
+    }
+  }
+
+  @media screen and (max-width : 524px){
+    .contenedor-productos{
+      max-width : 85%;
+      grid-template-columns: 1fr;
+      
+    }
+  }

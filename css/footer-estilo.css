@@ -4,10 +4,16 @@
     background: #933157;
 }
 .autor{
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     align-self: center;
     color: #fff;
+    padding: 10px;
+}
+
+.autor img{
+    max-height: 20px;
+    padding: 0 5px 0 0;
 }
 
 .autor a{
@@ -17,4 +23,57 @@
 
 .autor a:hover{
     color:#48001E;
+}
+
+.copy{
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width : 1200px){
+    .autor{
+        font-size: 1.4rem;
+        
+    }
+    
+    .autor img{
+        max-height: 18px;
+    }
+    
+.copy{
+ 
+    font-size: 1.1rem;
+}
+}
+
+@media screen and (max-width : 750px){
+    .autor{
+        font-size: 1.2rem;
+        
+    }
+    
+    .autor img{
+        max-height: 15px;
+    }
+    .copy{
+ 
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width : 524px){
+    .autor{
+        font-size: 1rem;
+        
+    }
+    
+    .autor img{
+        max-height: 12px;
+    }
+
+    .copy{
+ 
+        font-size: .8rem;
+    }
 }

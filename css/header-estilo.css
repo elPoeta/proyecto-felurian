@@ -13,13 +13,11 @@
 .logo-header{
     max-height: 90px;
     padding: 5px;
-    grid-column: 1 / 2;
 }
 
 .titulo-header{
     font-size: 3.5rem;
     text-transform: uppercase;
-    grid-column: 2 / 3;
     align-self: center;
     font-weight: 900;
 
@@ -72,9 +70,11 @@
     font-size: 1.3rem;
     color: #fff;
     text-decoration: none;
+
 }
 
 .compras{
+
     display: grid;
     grid-template-columns: 50px 1fr;
     align-content: center;
@@ -84,7 +84,7 @@
     max-height: 30px;
 }
 
-.cantidadDeProductos {
+.circulo-compras {
 	width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
@@ -94,12 +94,184 @@
 	align-items: center;
 	text-align: center;
 }
-#cantidadEnCarrito{
-	font-family: sans-serif;
+.cantidadEnCarrito{
 	color: #48001E;
 	font-size: 1.1rem;
 	font-weight: 800;
 }
 .carrito-logo:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width : 1200px){
+    .logo-header{
+        max-height: 50px;
+  
+    }
+    
+    .titulo-header{
+        font-size: 2rem;
+    
+    }
+    
+    #buscar{ 
+        height: 25px;
+    }
+    
+    .logo-buscar{
+        max-height: 20px;
+    }
+     
+    .contenedor-login{
+        grid-template-columns: 40px 1fr;
+    }
+    
+    .logo-user{
+        max-height: 15px;
+    }
+    .login{
+        font-size: 1.1rem;
+    }
+    
+    .compras{
+        grid-template-columns: 40px 1fr;
+    }
+    
+    .carrito-logo{
+        max-height: 22px;
+    }
+    
+    .circulo-compras {
+        width: 1.5rem;
+        height: 1.5rem;
+     
+    }
+    .cantidadEnCarrito{
+        font-size: 1rem;
+    }
+    
+}
+
+@media screen and (max-width : 750px){
+    .logo-header{
+        max-height: 40px;
+  
+    }
+    
+    .titulo-header{
+        font-size: 1.3rem;
+    
+    }
+    
+    #buscar{ 
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .logo-buscar{
+        max-height: 15px;
+    }
+     
+    .contenedor-login{
+        grid-template-columns: 30px 1fr;
+    }
+    
+    .logo-user{
+        max-height: 12px;
+    }
+    .login{
+        font-size: 1rem;
+    }
+    
+    .compras{
+        grid-template-columns: 30px 1fr;
+    }
+    
+    .carrito-logo{
+        max-height: 18px;
+    }
+    
+    .circulo-compras {
+        width: 1.2rem;
+        height: 1.2rem;
+     
+    }
+    .cantidadEnCarrito{
+        font-size: .8rem;
+    }
+    
+}
+
+@media screen and (max-width : 524px){
+  
+    .header{
+        grid-template-columns: 1fr 4fr 2fr;
+    }
+    
+    .logo-header{
+        display: none;
+    }
+    
+    .titulo-header{
+        font-size: 1.2rem;
+        grid-column: 1 / 1;
+    }
+
+    
+    .form-busqueda{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-content: center;
+    }
+    
+    #buscar{
+        grid-column: 2 / 4;   
+        font-size: 1rem;
+        height: 20px;
+        align-self: center;
+        background: #48001E;
+        color: #fff;
+        border: none;
+        border-bottom:2px solid #fff;
+    }
+    
+    .logo-buscar{
+        max-height: 20px;
+        text-align: center;
+    }
+     
+    .contenedor-login{
+        display: none;
+    }
+    
+    .compras{
+    
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-content: center;
+    }
+    
+    .carrito-logo{
+        max-height: 20px;
+    }
+    
+    .circulo-compras {
+        width: 1.1rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .cantidadEnCarrito{
+        color: #48001E;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    .carrito-logo:hover{
+        cursor: pointer;
+    }
 }

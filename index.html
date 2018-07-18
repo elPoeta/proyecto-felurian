@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/footer-estilo.css">
     <link rel="stylesheet" href="css/productos-estilo.css">
     <link rel="stylesheet" href="css/carrito-estilo.css">
+    <link rel="stylesheet" href="css/hamburger-estilo.css">
 
     <script src="js/datos.js" defer></script>
     <script src="js/menu.js" defer></script>
@@ -29,7 +30,7 @@
     <div class="contenedor">
         
         <header class="header">
-            
+             
             <figure>
                 <a href="index.html"><img src="img/logo-header.svg" alt="Felurian" class="logo-header"></a>
             </figure>
@@ -49,11 +50,12 @@
                 <a href="#" class="login">Login</a>
             </div>
             <div class="compras">
+
                 <figure>
                     <img src="img/carrito.svg" alt="carrito" class="carrito-logo">
                 </figure>
 
-                <div class="cantidadDeProductos"><p id="cantidadEnCarrito">0</p></div>
+                <div class="circulo-compras"><p id="cantidadEnCarritoCompras" class="cantidadEnCarrito">0</p></div>
             </div>
         </header>
         
@@ -66,7 +68,7 @@
         </nav>
         
         <aside class="side">
-            sd
+            Filtros de Busqueda
         
         </aside>
         
@@ -79,9 +81,10 @@
                           <img src="img/logo-banner.svg" class="logo-banner-img">
                     </div>
    
-                  <span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span>
-                  <span id="tipeo-contenedor"></span>
-                  <span class='tipeo-cursor'>|</span>   
+                 <H2><span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span></H2>
+                 <div class="contenedor-tipeo"><span id="tipeo-contenedor"></span>
+                  <span class='tipeo-cursor'>|</span>
+                </div> 
                
                 </div>
   
@@ -126,8 +129,17 @@
         </section>
         
         <footer class="footer">
-            <p class="autor">&copy; <a href="https://ar.linkedin.com/in/leonardo-tosetto" target="_blank">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank">@elPoeta</a></p>
+            <div>
+            <p class="autor"><a href="https://ar.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linked.svg">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/gitHub.svg">@elPoeta</a></p>   
+            </div>
+            <div >
+                <p class="copy">&copy; 2018</p>
+            </div>
+            
         </footer>
+        <div class="nav-hamburger">
+                <a href="#" id="nav-icon-hamburger">&#9776;</a>
+        </div>
     </div>
 
     <div>
@@ -136,34 +148,29 @@
                 <li class="lista-panel-carrito">
                         <img src="img/blanco.png" alt="wine" class="img-panel-carrito">
                         <h5 class ="nombreProducto-panel-carrito">Vino Blanco $124</h5>
-                        <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
-                        <div class="rango-panel-carrito">
-                            <span class="rango-span">10</span>
-                            <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
-                          
-                        </div>
-                        
-                        
+                        <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito" value="1">
                           <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
                 </li>  
                 <hr>
                 <li class="lista-panel-carrito">
                     <img src="img/tinto.png" alt="wine" class="img-panel-carrito">
                     <h5 class="nombreProducto-panel-carrito">Vino Tinto $522</h5>
-                    <!-- <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito"> -->
-                    <div class="rango-panel-carrito">
-                        <span class="rango-span">1</span>
-                        <input type="range" class="rango-bar" name="cantidad-panel" min="1" max="15" value="1" step="1"/>
-                      
-                    </div>
+                    <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito" value="1">
                     <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
             </li>  
             <hr>
             </ul> 
           
-                <h5 class="total-panel-carrito">total $124</h5>    
+                <h5 class="total-panel-carrito">total $666</h5>    
             
             <button class="btn-finalizarCompra">Finalizar Compra</button>
+        </div>
+      
+        <div class="nav-panel">
+                <a href="#" class="btn-cerrar-nav-panel" id="btn-nav-panel" >&times;</a>
+                <ul id="panel-side-menu">
+    
+                </ul>
         </div>
 </div>
 </body>
