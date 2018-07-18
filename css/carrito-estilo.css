@@ -172,6 +172,7 @@
     .panel-carrito{
         width: 60%;
         left: 35%;
+        top:60px;
     }
     .nombreProducto-panel-carrito{
         font-size: .8rem;
