@@ -23,7 +23,7 @@
 }
 .lista-panel-carrito{
     display: grid; 
-    grid-template-columns: 60px 1fr 50px 30px;
+    grid-template-columns: 50px 1fr 50px 30px 30px;
     grid-template-rows: 100px;
     justify-content: center;
     align-items: center;
@@ -43,15 +43,23 @@
   text-align: center;
   color: #fff;
 }
-
+.simboloMoneda-panel-carrito{
+    color: #48001E;
+}
+.cambiarCantidad-panel-carrito, 
 .eliminarProducto-panel-carrito{
     font-size: 1.8rem;
     color: #fff;
     text-decoration: none;
 }
+.cambiarCantidad-panel-carrito:hover{
+    color: #116611;
+    cursor: pointer;
+}
 
 .eliminarProducto-panel-carrito:hover{
     color: #48001E;
+    cursor: pointer;
 }
 
 .spinner-panel-carrito{
@@ -104,7 +112,7 @@
         grid-template-rows: 80px;    
     }
     .lista-panel-carrito{
-        grid-template-columns: 50px 1fr 40px 30px;
+        grid-template-columns: 50px 1fr 40px 30px 30px;
         grid-template-rows: 80px;
     }
     
@@ -123,6 +131,9 @@
     border: 1px solid #fff;
     padding: 2px;
     color: #fff;
+}
+.cambiarCantidad-panel-carrito{
+    padding: 2px;
 }
     .eliminarProducto-panel-carrito{
        padding: 2px;
@@ -161,7 +172,7 @@
         grid-template-rows: 60px;    
     }
     .lista-panel-carrito{
-        grid-template-columns: 40px 1fr 30px 20px;
+        grid-template-columns: 40px 1fr 30px 20px 20px;
         grid-template-rows: 60px;
     }
     
@@ -186,7 +197,12 @@
       .total-panel-carrito{
         font-size: .8rem;
     }
-    
+    .cambiarCantidad-panel-carrito{
+        font-size: 1.5rem;
+    }    
+    .eliminarProducto-panel-carrito{
+        font-size: 1.5rem;
+    }
     .btn-finalizarCompra{
         padding: 5px;
         font-size: .7rem;

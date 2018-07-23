@@ -50,7 +50,6 @@
                 <a href="#" class="login">Login</a>
             </div>
             <div class="compras">
-
                 <figure>
                     <img src="img/carrito.svg" alt="carrito" class="carrito-logo">
                 </figure>
@@ -130,7 +129,7 @@
         
         <footer class="footer">
             <div>
-            <p class="autor"><a href="https://ar.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linked.svg">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/gitHub.svg">@elPoeta</a></p>   
+            <p class="autor"><a href="https://www.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linked.svg">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/gitHub.svg">@elPoeta</a> | <a href="https://t.me/elPoetaDeveloper" target="_blank"><img src="img/telegram.svg">@elPoetaDeveloper</a></p>   
             </div>
             <div >
                 <p class="copy">&copy; 2018</p>
@@ -144,26 +143,13 @@
 
     <div>
         <div class="panel-carrito hide-panel">
-            <ul class="panel-carrito-grid">
-                <li class="lista-panel-carrito">
-                        <img src="img/blanco.png" alt="wine" class="img-panel-carrito">
-                        <h5 class ="nombreProducto-panel-carrito">Vino Blanco $124</h5>
-                        <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito" value="1">
-                          <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
-                </li>  
-                <hr>
-                <li class="lista-panel-carrito">
-                    <img src="img/tinto.png" alt="wine" class="img-panel-carrito">
-                    <h5 class="nombreProducto-panel-carrito">Vino Tinto $522</h5>
-                    <input type="number" name="quantity" min="1" max="15" class="spinner-panel-carrito" value="1">
-                    <a href="#" class="eliminarProducto-panel-carrito" id="" >&times;</a>
-            </li>  
-            <hr>
+            <ul class="panel-carrito-grid" id="panel-carrito">
+
             </ul> 
           
-                <h5 class="total-panel-carrito">total $666</h5>    
+                <h5 class="total-panel-carrito">Total $<span id="total-carrito">0</span></h5>    
             
-            <button class="btn-finalizarCompra">Finalizar Compra</button>
+            <button class="btn-finalizarCompra" id="btn-Comprar">Finalizar Compra</button>
         </div>
       
         <div class="nav-panel">
