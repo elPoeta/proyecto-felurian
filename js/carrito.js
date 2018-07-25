@@ -2,8 +2,9 @@ const cartCantidad = document.querySelector('#cantidadEnCarritoCompras');
 const carrito = document.querySelector('.carrito-logo');
 const panelCarrito = document.querySelector('#panel-carrito');
 const totalCarrito = document.querySelector('#total-carrito');
-const  panel = document.querySelector('.panel-carroCompras');
+const  panel = document.querySelectorAll('.panel-carroCompras');
 const  btnFinalizarCompra = document.querySelector('#btn-Comprar');
+const carritoVacio = document.querySelector('#carritoVacio');
 let carritoDeComprasSession =[];
 let compras={};
 compras.productos=[] ;
@@ -14,18 +15,22 @@ let  listaCompras;
 
 carrito.addEventListener('click', (e)=>{
     e.preventDefault();
-  if(panel.classList.contains('hide-panel')){
-       if(compras.total == 0){
-        document.querySelector('.total-panel-carrito').style.visibility = "hidden";
-          btnFinalizarCompra.style.visibility = "hidden";
-      }else{
-        document.querySelector('.total-panel-carrito').style.visibility = "visible";
-        btnFinalizarCompra.style.visibility = "visible";
-      } 
-    panel.classList.remove('hide-panel');
+    let i;
+    if(compras.total == 0){
+         i = 0;
+        panelCarritoVacio();
+       
+    }else{
+        i=1;
+      panelCarritoLleno();
+    }
+
+  if(panel[i].classList.contains('hide-panel')){
+       
+    panel[i].classList.remove('hide-panel');
   }
- else{
-    panel.classList.add('hide-panel');
+   else{
+     panel[i].classList.add('hide-panel');
   
  }
    
@@ -56,7 +61,17 @@ function guardarProductosEnCarrito(producto){
       
         agregarProductoAlPanel(producto);
 }
-
+function panelCarritoVacio(){
+    document.querySelector('.total-panel-carrito').style.visibility = "hidden";
+    btnFinalizarCompra.style.visibility = "hidden";
+    panel[1].classList.add('hide-panel');
+    panel[0].style.height = "65px";
+}
+function panelCarritoLleno(){
+    document.querySelector('.total-panel-carrito').style.visibility = "visible";
+    btnFinalizarCompra.style.visibility = "visible";
+    panel[0].classList.add('hide-panel');
+}
 function agregarProductoAlPanel(producto) {
   const li = document.createElement('li');
   const hr = document.createElement('hr');
@@ -94,7 +109,9 @@ function agregarProductoAlPanel(producto) {
   linkEliminar.setAttribute('id', `delcart-${producto.id}`);
   linkEliminar.innerHTML = '&times;';
   li.appendChild(linkEliminar);
-
+  
+  panel[0].classList.add('hide-panel');
+  
   panelCarrito.appendChild(li);
   panelCarrito.appendChild(hr);
 
@@ -121,7 +138,7 @@ function agregarProductoAlPanel(producto) {
                 }
             }
             updatePanel();
-                    console.log('luegoupdate');
+                
         });
   });
 
@@ -183,4 +200,7 @@ function borrarItem(id){
        }
        
         sessionStorage.setItem('carrito', JSON.stringify(listaCompras));
+        if(compras.total == 0){
+            panelCarritoVacio();
+        }
     }

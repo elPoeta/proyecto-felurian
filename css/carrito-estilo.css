@@ -12,7 +12,14 @@
     overflow: hidden;
     text-align: center;
 }
-
+#carritoVacio{ 
+    font-size: 1.5rem;
+    padding: 25px;
+    color: #48001E;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 800;
+}
 .hide-panel{
     display: none;
 }
