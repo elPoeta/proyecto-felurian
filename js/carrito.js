@@ -2,57 +2,68 @@ const cartCantidad = document.querySelector('#cantidadEnCarritoCompras');
 const carrito = document.querySelector('.carrito-logo');
 const panelCarrito = document.querySelector('#panel-carrito');
 const totalCarrito = document.querySelector('#total-carrito');
-let total =0;
-let carritoDeCompras;
-let cantidad =0;
-const  panel = document.querySelector('.panel-carrito');
+const  panel = document.querySelector('.panel-carroCompras');
+const  btnFinalizarCompra = document.querySelector('#btn-Comprar');
+let carritoDeComprasSession =[];
+let compras={};
+compras.productos=[] ;
+compras.total = 0;
+compras.items = 0;
+let  listaCompras;
+
+
 carrito.addEventListener('click', (e)=>{
     e.preventDefault();
-    console.log(cantidad);
-   console.log(panel);
-   if(panel.classList.contains('hide-panel')){
+  if(panel.classList.contains('hide-panel')){
+       if(compras.total == 0){
+        document.querySelector('.total-panel-carrito').style.visibility = "hidden";
+          btnFinalizarCompra.style.visibility = "hidden";
+      }else{
+        document.querySelector('.total-panel-carrito').style.visibility = "visible";
+        btnFinalizarCompra.style.visibility = "visible";
+      } 
     panel.classList.remove('hide-panel');
-}
-else{
+  }
+ else{
     panel.classList.add('hide-panel');
-}
+  
+ }
    
-});
+ });
 
 function agregarProductoACarrito(id){
-  cartCantidad.textContent=++cantidad;   
-  console.log(productos[id]);
-  guardarProductosEnCarrito(productos[id]);
-  console.log(JSON.parse(sessionStorage.getItem("carrito")));
+  agregarItem(productos[id]);
 
 }
 
 function guardarProductosEnCarrito(producto){
-        let compras = {};
-       carritoDeCompras =  sessionStorage.getItem("carrito");
+     
+       carritoDeComprasSession =  sessionStorage.getItem("carrito");
         
-        if ( carritoDeCompras === null ){
-          carritoDeCompras = '[]';
+        if ( carritoDeComprasSession === null ){
+          carritoDeComprasSession = '[]';
         }
         
-        let listaCompras = JSON.parse( carritoDeCompras ); 
-      
-        //compras.id = listaCompras.length;
-        compras.producto= producto;
+       listaCompras = JSON.parse( carritoDeComprasSession );
 
-        console.log('items>> ',compras);
-       
+        producto.cantidad = 1;
+        compras.total += producto.precio;
+        compras.items += 1;
+        compras.productos = producto;
+
         listaCompras.push( compras );  
         sessionStorage.setItem( "carrito", JSON.stringify( listaCompras ));
+      
         agregarProductoAlPanel(producto);
-
 }
 
 function agregarProductoAlPanel(producto) {
   const li = document.createElement('li');
   const hr = document.createElement('hr');
+  hr.setAttribute('id', `hr-${producto.id}`);
+
   li.className = 'lista-panel-carrito';
- // li.appendChild(document.createTextNode(tarea.value));
+  
   const img = document.createElement('img');
   img.className = 'img-panel-carrito';
   img.src = `${producto.imagen}`;
@@ -60,7 +71,6 @@ function agregarProductoAlPanel(producto) {
   
   const h5 = document.createElement('h5');
   h5.className ='nombreProducto-panel-carrito';
-  //h5.appendChild(document.createTextNode(`${producto.nombre}  $${producto.precio}`));
   h5.innerHTML = `${producto.nombre} &nbsp;<span class="simboloMoneda-panel-carrito">$</span>${producto.precio}`;
   li.appendChild(h5);
   const input = document.createElement('input');
@@ -87,8 +97,90 @@ function agregarProductoAlPanel(producto) {
 
   panelCarrito.appendChild(li);
   panelCarrito.appendChild(hr);
-  total+= producto.precio;
-  totalCarrito.innerText = total;
+
   
+  let spinner = document.querySelector(`#rango-${producto.id}`);
+  let quitarProducto = document.querySelector(`#delcart-${producto.id}`);  
+  spinner.addEventListener('change', ()=>{
+    
+        let addCart = document.querySelector(`#addcart-${producto.id}`);
+        addCart.addEventListener('click', ()=>{
+            
+            for (let i=0; i< listaCompras.length; i++) {
+               
+                if (listaCompras[i].productos.id == producto.id) {
+                 
+                    compras.total -= listaCompras[i].productos.cantidad * producto.precio; 
+                    compras.items -= listaCompras[i].productos.cantidad;
+                  
+                    listaCompras[i].productos.cantidad = Number(spinner.value);
+                    compras.total += listaCompras[i].productos.cantidad * producto.precio;
+                    compras.items += listaCompras[i].productos.cantidad;
+                  
+                    break;
+                }
+            }
+            updatePanel();
+                    console.log('luegoupdate');
+        });
+  });
+
+  quitarProducto.addEventListener('click', (e)=>{
+    
+    for (let i=0; i< listaCompras.length; i++) {
+               
+        if (listaCompras[i].productos.id == producto.id) {
+
+            compras.total -= listaCompras[i].productos.cantidad * producto.precio; 
+            compras.items -= listaCompras[i].productos.cantidad;
+           
+          if (e.target.className ==='eliminarProducto-panel-carrito') {
+                e.target.parentElement.remove();
+                document.querySelector(`#hr-${producto.id}`).remove(); 
+            }
+
+            borrarItem(producto.id)
+           
+            break;
+        }
+    }
+    updatePanel();
+  });
 }
 
+function agregarItem(producto){
+ let nuevoItem = true;
+ listaCompras = JSON.parse(sessionStorage.getItem("carrito"));
+ 
+if(listaCompras != null && listaCompras !='[]'){
+  for (let i=0; i < listaCompras.length; i++) {
+   
+      if (listaCompras[i].productos.id == producto.id) {
+          nuevoItem = false;
+          break;
+      }
+  }
+ } 
+  if (nuevoItem) {  
+    guardarProductosEnCarrito(producto);
+  }
+ updatePanel();
+} 
+
+function updatePanel(){
+    cartCantidad.innerHTML = compras.items 
+    totalCarrito.innerText = compras.total;
+    sessionStorage.setItem('carrito', JSON.stringify(listaCompras));
+}
+
+function borrarItem(id){
+         listaCompras = JSON.parse(sessionStorage.getItem('carrito'));
+     
+       for(let i=0; i < listaCompras.length; i++){
+        if (listaCompras[i].productos.id == id) {
+            listaCompras.splice(i, 1);
+        }
+       }
+       
+        sessionStorage.setItem('carrito', JSON.stringify(listaCompras));
+    }

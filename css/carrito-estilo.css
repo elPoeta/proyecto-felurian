@@ -1,4 +1,4 @@
-.panel-carrito{
+.panel-carroCompras{
     width: 20%;
     left: 70%;
     height: auto;
@@ -102,7 +102,7 @@
 }
 
 @media screen and (max-width : 1200px){
-    .panel-carrito{
+    .panel-carroCompras{
         width: 40%;
         left: 55%;
         top:70px;
@@ -149,7 +149,7 @@
 }
 
 @media screen and (max-width : 750px){
-    .panel-carrito{
+    .panel-carroCompras{
         width: 50%;
         left: 45%;
     }
@@ -180,7 +180,7 @@
         height: 60px;    
     }
     
-    .panel-carrito{
+    .panel-carroCompras{
         width: 60%;
         left: 35%;
         top:60px;
