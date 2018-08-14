@@ -94,6 +94,7 @@
 
 .btn-finalizarCompra{
     width: 80%;
+    margin: 0 auto;
     padding: 10px;
     background: #116611;
     color: #fff; 
