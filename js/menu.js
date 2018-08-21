@@ -1,14 +1,6 @@
 class Menu{
-    add(categoria){
-        if( this.datos === undefined ){
-          this.datos = [];
-        }
-        this.datos = categoria;
-        
-      }
-
     viewMenu(idPanel){
-        let categorias = this.datos;
+      
         let template =  categorias.map( categoria =>
                     `<li><a href="#">${categoria.nombre}</a>
                         <ul class="hide-menu">
@@ -17,6 +9,7 @@ class Menu{
                            `<li><a href="#" onclick=buscarPorSubCategoria(${sub.id});>${sub.nombre}</a></li>`
                         ).join('')}</ul></li>`
                      ).join('');
+                     
         document.querySelector(idPanel).innerHTML = template;
                      menuEventos();
       }
@@ -25,7 +18,6 @@ class Menu{
 
 
 let m = new Menu;
-m.add(categorias);
 m.viewMenu('#panel-side-menu');
 m.viewMenu('#menu-template');
 

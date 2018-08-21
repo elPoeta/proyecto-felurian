@@ -12,7 +12,13 @@ body{
         "fo fo fo fo fo fo fo fo";
 
 }
-
+#loading {
+    position: fixed;
+    width: 8%;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
 @media screen and (max-width : 1200px){
     .contenedor{
         grid-template-rows: 70px 40px auto 70px;

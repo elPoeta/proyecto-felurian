@@ -1,12 +1,6 @@
 class Productos{
-    add(productos){
-        if( this.datos === undefined ){
-          this.datos = [];
-        }
-        this.datos = productos;  
-      }
+  
     viewProductos(idPanel){
-        let productos = this.datos;
         let template =  `<section class="contenedor-productos text-center">
                          ${productos.map((producto, index) =>
            `<div class="card">
@@ -17,9 +11,10 @@ class Productos{
             <h3 class="precio-card">$ ${producto.precio}</h3>
             <hr>
             <button class="btn-agregar" onclick="agregarProductoACarrito(${index})">Agregar</button>
-            </div>`).join('')}</section>`;   
+            </div>`).join('')}</section>`;  
+            
             document.querySelector(idPanel).innerHTML = template;
-           
+ 
             Lupa.lupaEventos();
             
     }
@@ -27,6 +22,6 @@ class Productos{
 
 function  cargarProductos(){
     const vista = new Productos();
-    vista.add(productos);
+   
     vista.viewProductos('#panel-content');
   }

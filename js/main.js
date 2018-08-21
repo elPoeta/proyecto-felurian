@@ -29,3 +29,13 @@ function borrarTipeo() {
       setTimeout(autoTipeo, speed);
     }
 }
+
+let loadingsvg = document.querySelector("#loading");  
+function loading(on) {
+  
+  if (on) {
+      loadingsvg.style.display = "block";
+  } else {
+      loadingsvg.style.display = "none";
+  }
+}
