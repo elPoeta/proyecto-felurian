@@ -6,7 +6,8 @@
     position: fixed;
     z-index:100;
     top:100px;
-    background-color:#DC93AF;
+    background-color:rgba(255, 255, 255, 0.95);
+    border: 2px solid #48001E;
     border-radius: 15px;
     opacity: 1;   
     overflow: hidden;
@@ -48,15 +49,15 @@
 .nombreProducto-panel-carrito{
   font-size: 1.5rem;
   text-align: center;
-  color: #fff;
+  color: #48001E;
 }
 .simboloMoneda-panel-carrito{
-    color: #48001E;
+    color: #4e4e4e;
 }
 .cambiarCantidad-panel-carrito, 
 .eliminarProducto-panel-carrito{
     font-size: 1.8rem;
-    color: #fff;
+    color: #4e4e4e;
     text-decoration: none;
 }
 .cambiarCantidad-panel-carrito:hover{
@@ -72,10 +73,10 @@
 .spinner-panel-carrito{
     width: auto;
     font-size: 1.1rem;
-    background: #DC93AF;
-    border: 1px solid #fff;
+    background: #fff;
+    border: 1px solid #48001E;
     padding: 2px;
-    color: #fff;
+    color: #000;
 }
 
 .rango-panel-carrito{
