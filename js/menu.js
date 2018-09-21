@@ -1,18 +1,19 @@
 class Menu{
+        
     viewMenu(idPanel){
       
-        let template =  categorias.map( categoria =>
-                    `<li><a href="#">${categoria.nombre}</a>
-                        <ul class="hide-menu">
-                          <li><a href="#" class="categoria" id="cat-id-${categoria.id}">Todos</a>
-                          ${categoria.subCategorias.map( sub =>
-                           `<li><a href="#" onclick=buscarPorSubCategoria(${sub.id});>${sub.nombre}</a></li>`
-                        ).join('')}</ul></li>`
-                     ).join('');
-                     
-        document.querySelector(idPanel).innerHTML = template;
-                     menuEventos();
-      }
+            let template =  categorias.map( categoria =>
+                        `<li><a href="#">${categoria.nombre}</a>
+                            <ul class="hide-menu">
+                              <li><a href="#" class="categoria" id="cat-id-${categoria.id}">Todos</a>
+                              ${categoria.subCategorias.map( sub =>
+                               `<li><a href="#" onclick=buscarPorSubCategoria(${sub.id});>${sub.nombre}</a></li>`
+                            ).join('')}</ul></li>`
+                         ).join('');
+                         
+            document.querySelector(idPanel).innerHTML = template;
+                         menuEventos();
+          }
       
 }
 
