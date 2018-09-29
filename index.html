@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,6 @@
     <link rel="stylesheet" href="css/side-estilo.css">
     <link rel="stylesheet" href="css/mainSection-estilo.css">
     <link rel="stylesheet" href="css/footer-estilo.css">
-    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/productos-estilo.css">
     <link rel="stylesheet" href="css/carrito-estilo.css">
     <link rel="stylesheet" href="css/hamburger-estilo.css">
@@ -28,17 +28,174 @@
 
     <title>Felurian Wine Store</title>
 </head>
+
 <body>
-    <div class="contenedor">
+
+        <div class="contenedor">
         
+                <header class="header">
+                     
+                    <figure>
+                        <a href="index.html"><img src="img/logo-header.svg" alt="Felurian" class="logo-header"></a>
+                    </figure>
+        
+                    <h1 class="titulo-header"><a href="index.html">Felurian</a></h1>
+                   
+                    <div class="form-busqueda">
+                        <input type="search" id="buscar" placeholder="Buscar...">
+                        <figure>
+                            <img src="img/lupa.svg" alt="buscar" class="logo-buscar">
+                        </figure>
+                    </div>
+                    <div class="contenedor-login">
+                        <figure>
+                            <img src="img/user.svg" alt="login" class="logo-user">
+                        </figure>
+                        <a href="login.html" class="login" id="login-header">Login</a>
+                    </div>
+                    <div class="compras">
+                        <figure>
+                            <img src="img/carrito.svg" alt="carrito" class="carrito-logo">
+                        </figure>
+        
+                        <div class="circulo-compras"><p id="cantidadEnCarritoCompras" class="cantidadEnCarrito">0</p></div>
+                    </div>
+                </header>
+                
+                <nav class="nav-bar">
+                    <div class="nav-menu" >
+                        <ul id="menu-template">
+        
+                        </ul>
+                    </div>
+                </nav>
+                
+                <aside class="side">
+                    
+                    <section id="side-content">
+                        <article class="side-article">
+                            <h2>Compra con paypal</h2>
+                            <p>Ahora podes abonar tus compras con paypal</p>
+                            <figure>
+                                
+                            </figure>
+                        </article>
+                             
+                        <article class="side-article">
+                            <h2>Proximamente...</h2>
+                            <p>nuevos medios de pago!!!</p>
+                            <figure>
+                               
+                            </figure>    
+                        </article>
+                    </section>
+                
+                </aside>
+                
+                <section class="main-section">
+                    <div id="panel-content">
+                        
+                        <div class="banner">
+                       
+                            <div class="banner-badge">
+                                  <img src="img/logo-banner.svg" class="logo-banner-img">
+                            </div>
+           
+                         <H2><span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span></H2>
+                         <div class="contenedor-tipeo"><span id="tipeo-contenedor"></span>
+                          <span class='tipeo-cursor'>|</span>
+                        </div> 
+                       
+                        </div>
+          
+                          <div class="content-grilla">
+                       
+                            <div>
+                                  <a class="fondo-grilla" href="#">
+                                      <div class="texto-grilla">
+                                          <h2>Promociones</h2>
+                                      </div>
+                                      <img src="img/promos-grilla.jpg">
+                                  </a>
+                              </div>
+              
+                          <div>
+                                  <a class="fondo-grilla" href="#" onclick="buscarPorCategoria(1)">
+                                      <div class="texto-grilla">
+                                          <h2>Vinos</h2>
+                                      </div>
+                                      <img src="img/vinos-grilla.jpg">
+                                  </a>
+                         </div>
+               
+                        <div>
+                                  <a class="fondo-grilla" href="#" onclick="buscarPorCategoria(2)">
+                                      <div class="texto-grilla">
+                                          <h2>Delicias</h2>
+                                      </div>
+                                      <img src="img/delicias-grilla.jpg">
+                                  </a>
+                              </div>
+              
+                              <div>
+                                  <a class="fondo-grilla" href="#" onclick="buscarPorCategoria(3)">
+                                      <div class="texto-grilla">
+                                          <h2>Accesorios</h2>
+                                      </div>
+                                      <img src="img/accesorios-grilla.jpg">
+                                  </a>
+                              </div>
+                      </div>
+                      </div>  
+                         
+                </section>
+                
+                <footer class="footer">
+                    <div>
+                    <p class="autor"><a href="https://www.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linkedin.svg">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/github.svg">@elPoeta</a> | <a href="https://t.me/elPoetaDeveloper" target="_blank"><img src="img/telegram.svg">@elPoetaDeveloper</a></p>   
+                    </div>
+                    <div >
+                        <p class="copy">&copy; 2018</p>
+                    </div>
+                    
+                </footer>
+                <div class="nav-hamburger">
+                        <a href="#" id="nav-icon-hamburger">&#9776;</a>
+                </div>
+            </div>
+        
+            <div>
+                    <div class="panel-carroCompras hide-panel">
+                            <h5 id="carritoVacio">Carrito Vacio!</h5>   
+                    </div>     
+                <div class="panel-carroCompras hide-panel">
+                       
+                    <ul class="panel-carrito-grid" id="panel-carrito">
+        
+                    </ul> 
+                  
+                        <h5 class="total-panel-carrito">Total $<span id="total-carrito">0</span></h5>    
+                    
+                    <button class="btn-finalizarCompra" id="btn-Comprar">Finalizar Compra</button>
+                </div>
+                <div class="nav-panel">
+                        <a href="#" class="btn-cerrar-nav-panel" id="btn-nav-panel" >&times;</a>
+                        <ul id="panel-side-menu">
+            
+                        </ul>
+                </div>
+                <img id="loading" src="img/loading.svg" alt="Loading">
+        </div>
+   <!--  <div class="contenedor">
+
         <header class="header">
-             
+
             <figure>
                 <a href="index.html"><img src="img/logo-header.svg" alt="Felurian" class="logo-header"></a>
             </figure>
 
             <h1 class="titulo-header"><a href="index.html">Felurian</a></h1>
-           
+
             <div class="form-busqueda">
                 <input type="search" id="buscar" placeholder="Buscar...">
                 <figure>
@@ -49,169 +206,136 @@
                 <figure>
                     <img src="img/user.svg" alt="login" class="logo-user">
                 </figure>
-                <a href="#" class="login">Login</a>
+                <a href="login.html" class="login">Login</a>
             </div>
             <div class="compras">
                 <figure>
                     <img src="img/carrito.svg" alt="carrito" class="carrito-logo">
                 </figure>
 
-                <div class="circulo-compras"><p id="cantidadEnCarritoCompras" class="cantidadEnCarrito">0</p></div>
+                <div class="circulo-compras">
+                    <p id="cantidadEnCarritoCompras" class="cantidadEnCarrito">0</p>
+                </div>
             </div>
         </header>
-        
+
         <nav class="nav-bar">
-            <div class="nav-menu" >
+            <div class="nav-menu">
                 <ul id="menu-template">
 
                 </ul>
             </div>
         </nav>
-        
+
         <aside class="side">
             Filtros de Busqueda
-        
+
         </aside>
-        
+
         <section class="main-section">
             <div id="panel-content">
-                
-                <div class="banner">
-               
-                    <div class="banner-badge">
-                          <img src="img/logo-banner.svg" class="logo-banner-img">
-                    </div>
-   
-                 <H2><span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span></H2>
-                 <div class="contenedor-tipeo"><span id="tipeo-contenedor"></span>
-                  <span class='tipeo-cursor'>|</span>
-                </div> 
-               
+            </div>
+    </div>
+    <div class="banner">
+    </div>
+    </div>
+    <div class="banner-badge">
+    </div> <img src="img/logo-banner.svg" class="logo-banner-img">
+    </div>
+    </div>
+    </div>
+    </div>
+    <H2><span class="titulo-banner"><span>Felurian</span> <sup> . </sup></span></H2>
+    </div>
+    <div class="contenedor-tipeo"><span id="tipeo-contenedor"></span>
+    </div> <span class='tipeo-cursor'>|</span>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="content-grilla">
+
+        <div>
+            <a class="fondo-grilla" href="#">
+                <div class="texto-grilla">
+                    <h2>Promociones</h2>
                 </div>
-  
-                  <div class="content-grilla">
-               
-                    <div>
-                          <a class="fondo-grilla" href="#">
-                              <div class="texto-grilla">
-                                  <h2>Promociones</h2>
-                              </div>
-                              <img src="img/promos-grilla.jpg">
-                          </a>
-                      </div>
-      
-                  <div>
-                          <a class="fondo-grilla" href="#" onclick="cargarProductos();">
-                              <div class="texto-grilla">
-                                  <h2>Vinos</h2>
-                              </div>
-                              <img src="img/vinos-grilla.jpg">
-                          </a>
-                 </div>
-       
-                <div>
-                          <a class="fondo-grilla" href="#">
-                              <div class="texto-grilla">
-                                  <h2>Delicias</h2>
-                              </div>
-                              <img src="img/delicias-grilla.jpg">
-                          </a>
-                      </div>
-      
-                      <div>
-                          <a class="fondo-grilla" href="#">
-                              <div class="texto-grilla">
-                                  <h2>Accesorios</h2>
-                              </div>
-                              <img src="img/accesorios-grilla.jpg">
-                          </a>
-                      </div>
-              </div>
-        </section>
-        
-        <footer class="footer">
-            <div>
-            <p class="autor"><a href="https://www.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linkedin.svg">Leonardo Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/github.svg">@elPoeta</a> | <a href="https://t.me/elPoetaDeveloper" target="_blank"><img src="img/telegram.svg">@elPoetaDeveloper</a></p>   
-            </div>
-            <div >
-                <p class="copy">&copy; 2018</p>
-            </div>
-            
-        </footer>
-        <div class="nav-hamburger">
-                <a href="#" id="nav-icon-hamburger">&#9776;</a>
+                <img src="img/promos-grilla.jpg">
+            </a>
+        </div>
+
+        <div>
+            <a class="fondo-grilla" href="#" onclick="cargarProductos();">
+                <div class="texto-grilla">
+                    <h2>Vinos</h2>
+                </div>
+                <img src="img/vinos-grilla.jpg">
+            </a>
+        </div>
+
+        <div>
+            <a class="fondo-grilla" href="#">
+                <div class="texto-grilla">
+                    <h2>Delicias</h2>
+                </div>
+                <img src="img/delicias-grilla.jpg">
+            </a>
+        </div>
+
+        <div>
+            <a class="fondo-grilla" href="#">
+                <div class="texto-grilla">
+                    <h2>Accesorios</h2>
+                </div>
+                <img src="img/accesorios-grilla.jpg">
+            </a>
         </div>
     </div>
+    </div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <p class="autor"><a href="https://www.linkedin.com/in/leonardo-tosetto" target="_blank"><img src="img/linkedin.svg">Leonardo
+                    Tosetto</a> | <a href="https://github.com/elPoeta" target="_blank"><img src="img/github.svg">@elPoeta</a>
+                | <a href="https://t.me/elPoetaDeveloper" target="_blank"><img src="img/telegram.svg">@elPoetaDeveloper</a></p>
+        </div>
+        <div>
+            <p class="copy">&copy; 2018</p>
+        </div>
+
+    </footer>
+    <div class="nav-hamburger">
+        <a href="#" id="nav-icon-hamburger">&#9776;</a>
+    </div>
+ </div>
 
     <div>
-            <div class="panel-carroCompras hide-panel">
-                    <h5 id="carritoVacio">Carrito Vacio!</h5>   
-            </div>     
         <div class="panel-carroCompras hide-panel">
-               
+            <h5 id="carritoVacio">Carrito Vacio!</h5>
+        </div>
+        <div class="panel-carroCompras hide-panel">
+
             <ul class="panel-carrito-grid" id="panel-carrito">
 
-            </ul> 
-          
-                <h5 class="total-panel-carrito">Total $<span id="total-carrito">0</span></h5>    
-            
+            </ul>
+
+            <h5 class="total-panel-carrito">Total $<span id="total-carrito">0</span></h5>
+
             <button class="btn-finalizarCompra" id="btn-Comprar">Finalizar Compra</button>
         </div>
-      
+
         <div class="nav-panel">
-                <a href="#" class="btn-cerrar-nav-panel" id="btn-nav-panel" >&times;</a>
-                <ul id="panel-side-menu">
-    
-                </ul>
+            <a href="#" class="btn-cerrar-nav-panel" id="btn-nav-panel">&times;</a>
+            <ul id="panel-side-menu">
+
+            </ul>
         </div>
         <img id="loading" src="img/loading.svg" alt="Loading">
-</div>
-
-
-<!--LOGIN -->
-
-<div id="simpleModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-          <span id="closeBtn">&times;</span>
-          <h2>
-              <label for="toggle-log" class="toggle">Login</label>
-              <label for="toggle-sign" class="toggle">Registrarse</label>
-          </h2>
-      </div>
-      <div class="modal-body">
-          <div class="wrapper">
-      <div class="container">  
-
-        <input type="radio" name="toggles" id="toggle-log" class="toggle" checked="checked" />
-        <input type="radio" name="toggles" id="toggle-sign" class="toggle" />
-        
-        <div class="panel" id="login">
-          <label for="log-email">Email</label>
-          <input id="log-email" />
-          <label for="log-pass">Password</label>
-          <input type="password" id="log-pass" />
-      
-          <button id="btn-login">Login</button>
-        </div>
-      
-        <div class="panel" id="signup">
-          <label for="sign-email">Email</label>
-          <input id="sign-email" />
-          <label for="sign-pass">Password</label>
-          <input type="password" id="sign-pass" />
-          <label for="sign-confirm">Confirmar password</label>
-          <input type="password" id="sign-confirm" />
-      
-          <button id="btn-registrar">Registrarse</button>
-        </div>
-      </div>
-    </div> 
-      </div>
-     
     </div>
-  </div>   
-
+ -->
 
 </body>
+
 </html>
